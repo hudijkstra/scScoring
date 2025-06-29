@@ -16,6 +16,7 @@ Notebooks/*.ipynb
 !Notebooks/scDRS_celltype_association_heatmaps.ipynb
 !Notebooks/scDRS_trial.ipynb
 !Notebooks/scDRS_tutorial.ipynb
+!Notebooks/PascalX_eQTL_comparison.ipynb
 
 # Ignore results and data folders
 Data/
