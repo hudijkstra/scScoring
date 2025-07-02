@@ -179,7 +179,7 @@ def parse_args():
     
     parser.add_argument("-rna", "--rna_file", type=Path, required=True, help="Path to gene expression .h5ad file")
     parser.add_argument("-atac", "--atac_file", type=Path, required=True, help="Path to ATAC gene score .h5ad file")
-    parser.add_argument("-concat", "--concat-adata", type=Path, default=None,
+    parser.add_argument("-concat", "--concat_adata", type=Path, default=None,
         help="Optional path to a precomputed .h5ad AnnData file. If provided, this will be used to generate aggregated modality UMAP of scDRS scores.")
     parser.add_argument("-gs", "--geneset", type=Path, required=True, help="Path to gene set file")
     parser.add_argument("-o", "--outdir", type=Path, default="scdrs_results", help="Output directory")
@@ -240,9 +240,9 @@ def main():
     sc.settings.figdir = fig_dir
 
     # NOTE: maybe change to just the coordinates
-    if args.concat:
-        print(f"Loading precomputed data from {args.concat}")
-        adata = sc.read_h5ad(args.concat)
+    if args.concat_adata:
+        print(f"Loading precomputed data from {args.concat_adata}")
+        adata = sc.read_h5ad(args.concat_adata)
         data_dict[list(cell_score_dict.keys())[-1]] = [adata, None, None]
 
 
